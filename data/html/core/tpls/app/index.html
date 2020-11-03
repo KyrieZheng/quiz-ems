@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PHPEMS模拟考试系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.75, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="files/public/css/bootstrap.css" />
+    <link rel="stylesheet/less" type="text/css" href="files/public/css/pe.less" />
+    <link rel="stylesheet" href="files/public/css/swiper.min.css">
+    <script src="files/public/js/less.min.js"></script>
+    <script src="files/public/js/jquery.min.js"></script>
+    <script src="files/public/js/swiper.min.js"></script>
+    <script src="files/public/js/bootstrap.min.js"></script>
+    <script src="files/public/js/bootstrap-datetimepicker.js"></script>
+    <script src="files/public/js/all.fine-uploader.min.js"></script>
+    <script src="files/public/js/ckeditor/ckeditor.js"></script>
+    <script src="files/public/js/pe.app.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="pages">
+            <div class="topbar">
+    <div class="topbar-box">
+        <div class="col-xs-4">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <a href="https://github.com/oiuv/phpems" class="menu">
+                        免费开源的PHP模拟考试系统
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-8">
+            <ul class="list-unstyled list-inline text-right">
+                                <li>
+                    <span class="menu">欢迎您，peadmin</span>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="index.php?user-center" class="menu">
+                        个人中心
+                    </a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="index.php?user-app-logout" class="menu ajax">
+                        退出
+                    </a>
+                </li>
+                                <li>|</li>
+                <li>
+                    <a href="https://github.com/oiuv/phpems" class="menu">
+                        联系我们
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="nav">
+        <div class="col-xs-3">
+            <h1 class="logo"><img src="files/public/img/logo.png" style="height:56px;"/></h1>
+        </div>
+        <div class="col-xs-9">
+            <ul class="list-unstyled list-inline text-right">
+                <li>
+                    <a href="index.php" class="menu">
+                        首页
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?content" class="menu">
+                        新闻
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?seminar" class="menu">
+                        专题
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?course" class="menu">
+                        课程
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?exam" class="menu">
+                        考试
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?certificate" class="menu">
+                        证书
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?docs" class="menu">
+                        文档
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            <div class="content">
+                <div class="col-xs-9">
+                    <div class="content-box">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                                                <div class="swiper-slide">
+                                    <a href="index.php?content-app-content&contentid=5">
+                                        <img src="files/public/img/banner.jpg" style="max-width:100%;"/>
+                                    </a>
+                                </div>
+                                                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="content-box padding">
+                        <h2 class="title">
+                            最新考试
+                            <a href="index.php?exam" class="badge pull-right">更多 <em class="glyphicon glyphicon-plus"></em> </a>
+                        </h2>
+                        <ul class="list-box list-unstyled">
+                                                        <li class="col-xs-4 box">
+                                <a href="index.php?exam-app-basics-detail&basicid=4">
+                                    <div class="img">
+                                        <img src="files/public/img/noimage.gif" />
+                                    </div>
+                                    <h5 class="box-title">我来了</h5>
+                                    <div class="intro">
+                                        <p></p>
+                                    </div>
+                                </a>
+                            </li>
+                                                                                    <li class="col-xs-4 box">
+                                <a href="index.php?exam-app-basics-detail&basicid=3">
+                                    <div class="img">
+                                        <img src="files/public/img/noimage.gif" />
+                                    </div>
+                                    <h5 class="box-title">UOJ</h5>
+                                    <div class="intro">
+                                        <p>66666666</p>
+                                    </div>
+                                </a>
+                            </li>
+                                                                                    <li class="col-xs-4 box">
+                                <a href="index.php?exam-app-basics-detail&basicid=2">
+                                    <div class="img">
+                                        <img src="app/core/styles/images/noimage.gif" />
+                                    </div>
+                                    <h5 class="box-title">魔兽正史</h5>
+                                    <div class="intro">
+                                        <p>魔兽世界的历史</p>
+                                    </div>
+                                </a>
+                            </li>
+                                                    </ul>
+                        <ul class="list-box list-unstyled">
+                                                                                    <li class="col-xs-4 box">
+                                <a href="index.php?exam-app-basics-detail&basicid=1">
+                                    <div class="img">
+                                        <img src="app/core/styles/images/noimage.gif" />
+                                    </div>
+                                    <h5 class="box-title">中国近现代史纲要</h5>
+                                    <div class="intro">
+                                        <p>用鸦片战争开始的中国历史</p>
+                                    </div>
+                                </a>
+                            </li>
+                                                                                </ul>
+                    </div>
+                    <div class="content-box padding">
+                        <h2 class="title">
+                            最新课程
+                            <a href="index.php?course" class="badge pull-right">更多 <em class="glyphicon glyphicon-plus"></em> </a>
+                        </h2>
+                        <ul class="list-unstyled list-box">
+                                                        <li class="col-xs-4 box">
+                                <a href="index.php?course-app-course&csid=1">
+                                    <div class="img">
+                                        <img src="app/core/styles/images/noimage.gif" />
+                                    </div>
+                                    <h5 class="box-title">剧情故事</h5>
+                                    <div class="intro">
+                                        <p>魔兽世界剧情动画</p>
+                                    </div>
+                                </a>
+                            </li>
+                                                                                </ul>
+                    </div>
+                    <div class="content-box padding">
+                        <h2 class="title">
+                            热点新闻
+                            <a href="index.php?content" class="badge pull-right">更多 <em class="glyphicon glyphicon-plus"></em> </a>
+                        </h2>
+                        <ul class="list-unstyled list-img">
+                                                        <li class="border morepadding">
+                                <h4 class="shorttitle">
+                                    <a href="index.php?content-app-content&contentid=4">教育部公布2020年研考违规违法行为举报电话</a>
+                                </h4>
+                                <div class="intro">
+                                    <div class="col-xs-3 img">
+                                        <img src="app/core/styles/images/noimage.gif" />
+                                    </div>
+                                    <div class="desc">
+                                        <p>2020年全国硕士研究生招生考试将于12月21日至23日举行，报考人数341万人。为严厉打击涉考违法活动，严肃考试纪律，维护考生合法权益，现公布2020年全国硕士研究生招生考试违规违法行为举报电话。</p>
+                                        <p class="toolbar">
+                                            2019-12-01                                            <a href="index.php?content-app-content&contentid=4" class="hide btn btn-info pull-right more">查看详情</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+                <div class="col-xs-3 nopadding">
+                    <div class="content-box padding">
+                        <h2 class="title">网站公告</h2>
+                        <ul class="list-unstyled list-txt">
+                                                        <li class="border">
+                                <a target="_blank" href="index.php?content-app-content&contentid=5">
+                                    phpems 6.0发布                                </a>
+                            </li>
+                                                    </ul>
+                    </div>
+                    <div class="content-box padding">
+                        <h2 class="title">精彩专题<a href="index.php?seminar" class="badge pull-right">更多 <em class="glyphicon glyphicon-plus"></em> </a> </h2>
+                        <ul class="list-unstyled list-img">
+                                                    </ul>
+                    </div>
+                    <div class="content-box padding hide">
+                        <h2 class="title">点击排行</h2>
+                        <ul class="list-unstyled list-txt">
+                            <li class="striped">
+                                <span class="badge">1</span> PHPEMS6.0开发界面预览
+                            </li>
+                            <li class="striped">
+                                <span class="badge">2</span> PHPEMS6.0开发界面预览
+                            </li>
+                            <li class="striped">
+                                <span class="badge">3</span> PHPEMS6.0开发界面预览
+                            </li>
+                            <li class="striped">
+                                <span class="badge">4</span> PHPEMS6.0开发界面预览
+                            </li>
+                            <li class="striped">
+                                <span class="badge">5</span> PHPEMS6.0开发界面预览
+                            </li>
+                            <li class="striped">
+                                <span class="badge">6</span> PHPEMS6.0开发界面预览
+                            </li>
+                            <li class="striped">
+                                <span class="badge">7</span> PHPEMS6.0开发界面预览
+                            </li>
+                            <li class="striped">
+                                <span class="badge">8</span> PHPEMS6.0开发界面预览
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-box padding">
+                        <h2 class="title">友情链接</h2>
+                        <ul class="list-unstyled list-txt">
+                                                        <li class="border">
+                                <a target="_blank" href="index.php?content-app-content&contentid=2">
+                                    phpems@Github                                </a>
+                            </li>
+                                                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+    <div class="footer-content">
+        <p class="text-center">
+            PHPEMS在线模拟考试系统 著作权登记号：2013 SR 113189
+        </p>
+        <p class="text-center">
+            Copyright © phpems.net  2020        </p>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        var mySwiper = new Swiper ('.swiper-container',{
+            autoplay: true,
+            loop:true,
+            pagination: {
+                el: '.swiper-pagination'
+            }
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PHPEMS模拟考试系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.75, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="files/public/css/bootstrap.css" />
+    <link rel="stylesheet/less" type="text/css" href="files/public/css/pe.less" />
+    <link rel="stylesheet" href="files/public/css/swiper.min.css">
+    <script src="files/public/js/less.min.js"></script>
+    <script src="files/public/js/jquery.min.js"></script>
+    <script src="files/public/js/swiper.min.js"></script>
+    <script src="files/public/js/bootstrap.min.js"></script>
+    <script src="files/public/js/bootstrap-datetimepicker.js"></script>
+    <script src="files/public/js/all.fine-uploader.min.js"></script>
+    <script src="files/public/js/ckeditor/ckeditor.js"></script>
+    <script src="files/public/js/ckeditor/js/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!--
+    <script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+    -->
+    <script src="files/public/js/pe.app.js"></script>
+    <script src="files/public/js/exam.app.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="pages">
+            <div class="topbar">
+    <div class="topbar-box">
+        <div class="col-xs-4">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <a href="https://github.com/oiuv/phpems" class="menu">
+                        免费开源的PHP模拟考试系统
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-8">
+            <ul class="list-unstyled list-inline text-right">
+                                <li>
+                    <span class="menu">欢迎您，peadmin</span>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="index.php?user-center" class="menu">
+                        个人中心
+                    </a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="index.php?user-app-logout" class="menu ajax">
+                        退出
+                    </a>
+                </li>
+                                <li>|</li>
+                <li>
+                    <a href="https://github.com/oiuv/phpems" class="menu">
+                        联系我们
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="nav">
+        <div class="col-xs-3">
+            <h1 class="logo"><img src="files/public/img/logo.png" style="height:56px;"/></h1>
+        </div>
+        <div class="col-xs-7">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <h3 class="logo">UOJ</h3>
+                </li>
+                <li class="badge">
+                    到期时间 2021-11-03                </li>
+            </ul>
+        </div>
+        <div class="col-xs-2">
+            <ul class="list-unstyled list-inline">
+                <li class="pull-right">
+                    <a href="index.php?exam" class="menu">
+                        <span class="glyphicon glyphicon-chevron-left"></span> 返回
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            <div class="content">
+                <div class="col-xs-3" style="width: 20%">
+                    <div class="content-box padding">
+                        <h2 class="title">功能导航</h2>
+<ul class="list-unstyled list-txt">
+    <li  class="border">
+        <a href="index.php?exam-app-lesson">
+            <span class="glyphicon glyphicon-pencil"></span> 章节练习
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-exercise">
+            <span class="glyphicon glyphicon-refresh"></span> 强化训练
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-exampaper">
+            <span class="glyphicon glyphicon-time"></span> 模拟考试
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-history">
+            <span class="glyphicon glyphicon-list-alt"></span> 考试记录
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-favor">
+            <span class="glyphicon glyphicon-star"></span> 习题收藏
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-score">
+            <span class="glyphicon glyphicon-stats"></span> 成绩单
+        </a>
+    </li>
+        <li  class="border active">
+        <a href="index.php?exam-app-questions">
+            <span class="glyphicon glyphicon-equalizer"></span> 试题库
+        </a>
+    </li>
+    </ul>                    </div>
+                </div>
+                <div class="col-xs-9 nopadding" style="width: 80%" id="datacontent">
+                                        <div class="content-box padding">
+                        <h2 class="title">
+                            普通试题
+                            <a href="index.php?exam-app-questions-questionrows" class="badge pull-right">题冒题</a>
+                            <a href="index.php?exam-app-questions" class="badge pull-right">普通试题</a>
+                        </h2>
+                        <ul class="list-unstyled list-img">
+                            <li class="border">
+                                <div class="desc">
+                                    <form action="index.php?exam-app-questions" method="post" class="form-inline">
+                                        <table class="table">
+                                            <tr class="noborder">
+                                                <td>
+                                                    关键字：
+                                                </td>
+                                                <td>
+                                                    <input placeholder="请输入关键字" class="form-control" name="search[keyword]" size="10" type="text" value=""/>
+                                                </td>
+                                                <td>
+                                                    试题类型：
+                                                </td>
+                                                <td>
+                                                    <select name="search[questiontype]" class="form-control">
+                                                        <option value="0">类型不限</option>
+                                                                                                                <option value="1">单选题</option>
+                                                                                                                <option value="2">多选题</option>
+                                                                                                                <option value="3">判断题</option>
+                                                                                                                <option value="4">定值填空</option>
+                                                                                                                <option value="5">填空题</option>
+                                                                                                                <option value="6">问答题</option>
+                                                                                                            </select>
+                                                </td>
+                                                <td>
+                                                    难度：
+                                                </td>
+                                                <td>
+                                                    <select name="search[questionlevel]" class="form-control">
+                                                        <option value="0">难度不限</option>
+                                                        <option value="1">易</option>
+                                                        <option value="2">中</option>
+                                                        <option value="3">难</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    章节：
+                                                </td>
+                                                <td>
+                                                    <select name="search[questionsectionid]" class="combox form-control" id="sectionselect" target="knowsselect" refUrl="index.php?exam-app-questions-getknowsbysectionid&sectionid={value}">
+                                                        <option value="0">选择章节</option>
+                                                                                                                                                                        <option value="11">UOJ-TEST</option>
+                                                                                                                                                                    </select>
+                                                </td>
+                                                <td>
+                                                    知识点：
+                                                </td>
+                                                <td>
+                                                    <select name="search[questionknowsid]" id="knowsselect" class="form-control">
+                                                        <option value="">选择知识点</option>
+                                                                                                            </select>
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    <button class="btn btn-primary" type="submit">搜索</button>
+                                                    <input type="hidden" value="1" name="search[argsmodel]" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="border">
+                                <div class="desc">
+                                    <table class="table table-hover table-bordered">
+                                        <thead>
+                                        <tr class="info">
+                                            <th width="80">试题类型</th>
+                                            <th>试题内容</th>
+                                            <th width="48">难度</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                                                <tr>
+                                            <td>
+                                                单选题                                            </td>
+                                            <td>
+                                                <a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-app-questions-detail&questionid=570" data-target="#modal">中国的社会生产力在改革开放后迅速发展，到2012年经济总量已居世界</a>
+                                            </td>
+                                            <td>
+                                                中                                            </td>
+                                        </tr>
+                                                                                <tr>
+                                            <td>
+                                                单选题                                            </td>
+                                            <td>
+                                                <a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-app-questions-detail&questionid=569" data-target="#modal">十八大精神归结为一点，就是</a>
+                                            </td>
+                                            <td>
+                                                中                                            </td>
+                                        </tr>
+                                                                                <tr>
+                                            <td>
+                                                单选题                                            </td>
+                                            <td>
+                                                <a title="查看试题" class="selfmodal" href="javascript:;" url="index.php?exam-app-questions-detail&questionid=565" data-target="#modal">中共十七大召开时间是</a>
+                                            </td>
+                                            <td>
+                                                中                                            </td>
+                                        </tr>
+                                                                                </tbody>
+                                    </table>
+                                    <ul class="pagination pull-right">
+                                                                            </ul>
+                                </div>
+                            </li>
+                        </ul>
+                                            </div>
+                                    </div>
+            </div>
+            <div class="footer">
+    <div class="footer-content">
+        <p class="text-center">
+            PHPEMS在线模拟考试系统 著作权登记号：2013 SR 113189
+        </p>
+        <p class="text-center">
+            Copyright © phpems.net  2020        </p>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+<div id="modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" class="close" type="button" data-dismiss="modal">×</button>
+                <h4 id="myModalLabel">
+                    试题详情
+                </h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button aria-hidden="true" class="btn btn-primary" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

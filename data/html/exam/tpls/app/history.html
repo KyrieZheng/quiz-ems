@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PHPEMS模拟考试系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.75, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="files/public/css/bootstrap.css" />
+    <link rel="stylesheet/less" type="text/css" href="files/public/css/pe.less" />
+    <link rel="stylesheet" href="files/public/css/swiper.min.css">
+    <script src="files/public/js/less.min.js"></script>
+    <script src="files/public/js/jquery.min.js"></script>
+    <script src="files/public/js/swiper.min.js"></script>
+    <script src="files/public/js/bootstrap.min.js"></script>
+    <script src="files/public/js/bootstrap-datetimepicker.js"></script>
+    <script src="files/public/js/all.fine-uploader.min.js"></script>
+    <script src="files/public/js/ckeditor/ckeditor.js"></script>
+    <script src="files/public/js/ckeditor/js/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!--
+    <script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+    -->
+    <script src="files/public/js/pe.app.js"></script>
+    <script src="files/public/js/exam.app.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="pages">
+            <div class="topbar">
+    <div class="topbar-box">
+        <div class="col-xs-4">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <a href="https://github.com/oiuv/phpems" class="menu">
+                        免费开源的PHP模拟考试系统
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-8">
+            <ul class="list-unstyled list-inline text-right">
+                                <li>
+                    <span class="menu">欢迎您，peadmin</span>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="index.php?user-center" class="menu">
+                        个人中心
+                    </a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="index.php?user-app-logout" class="menu ajax">
+                        退出
+                    </a>
+                </li>
+                                <li>|</li>
+                <li>
+                    <a href="https://github.com/oiuv/phpems" class="menu">
+                        联系我们
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="nav">
+        <div class="col-xs-3">
+            <h1 class="logo"><img src="files/public/img/logo.png" style="height:56px;"/></h1>
+        </div>
+        <div class="col-xs-7">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <h3 class="logo">UOJ</h3>
+                </li>
+                <li class="badge">
+                    到期时间 2021-11-03                </li>
+            </ul>
+        </div>
+        <div class="col-xs-2">
+            <ul class="list-unstyled list-inline">
+                <li class="pull-right">
+                    <a href="index.php?exam" class="menu">
+                        <span class="glyphicon glyphicon-chevron-left"></span> 返回
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            <div class="content">
+                <div class="col-xs-3" style="width: 20%">
+                    <div class="content-box padding">
+                        <h2 class="title">功能导航</h2>
+<ul class="list-unstyled list-txt">
+    <li  class="border">
+        <a href="index.php?exam-app-lesson">
+            <span class="glyphicon glyphicon-pencil"></span> 章节练习
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-exercise">
+            <span class="glyphicon glyphicon-refresh"></span> 强化训练
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-exampaper">
+            <span class="glyphicon glyphicon-time"></span> 模拟考试
+        </a>
+    </li>
+    <li  class="border active">
+        <a href="index.php?exam-app-history">
+            <span class="glyphicon glyphicon-list-alt"></span> 考试记录
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-favor">
+            <span class="glyphicon glyphicon-star"></span> 习题收藏
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-score">
+            <span class="glyphicon glyphicon-stats"></span> 成绩单
+        </a>
+    </li>
+        <li  class="border">
+        <a href="index.php?exam-app-questions">
+            <span class="glyphicon glyphicon-equalizer"></span> 试题库
+        </a>
+    </li>
+    </ul>                    </div>
+                </div>
+                <div class="col-xs-9 nopadding" style="width: 80%">
+                    <div class="content-box padding">
+                        <h2 class="title">
+                                                        模拟考试
+                                                        <a href="index.php?exam-app-history&ehtype=2" class="badge pull-right">正式考试</a>
+                            <a href="index.php?exam-app-history&ehtype=1" class="badge pull-right">模拟考试</a>
+                            <a href="index.php?exam-app-history" class="badge pull-right">强化训练</a>
+                        </h2>
+                        <ul class="list-unstyled list-img">
+                            <li class="border padding">
+                                <div class="desc">
+                                                                        <p>您一共完成了<b class="text-warning">1</b>次考试， 平均分为：<b class="text-warning">0</b>分 继续努力吧！</p>
+                                                                    </div>
+                            </li>
+                            <li class="border">
+                                <div class="desc">
+                                    <table class="table table-bordered table-hover">
+                                        <tr class="info">
+                                            <td>答题记录</td>
+                                            <td width="160">答题时间</td>
+                                            <td width="80">用时</td>
+                                            <td width="80">得分</td>
+                                            <td width="80">错题数量</td>
+                                            <td width="140">操作</td>
+                                        </tr>
+                                                                                <tr>
+                                            <td>UOJ</td>
+                                            <td>2020-11-03 20:53:21</td>
+                                            <td>14秒</td>
+                                            <td><b>0.00</b></td>
+                                            <td><b>2</b></td>
+                                            <td>
+                                                <a title="错题" href="index.php?exam-app-history-wrongs&ehid=2"><em class="glyphicon glyphicon-edit"></em></a>
+                                                <a title="解析" href="index.php?exam-app-history-view&ehid=2"><em class="glyphicon glyphicon-list-alt"></em></a>
+                                                                                                <a title="重做" class="ajax" href="index.php?exam-app-history-redo&ehid=2" action-before="clearStorage"><em class="glyphicon glyphicon-repeat"></em></a>
+                                                                                                                                                <a title="删除" class="confirm" href="index.php?exam-app-history-del&ehid=2"><em class="glyphicon glyphicon-ban-circle"></em></a>
+                                                                                            </td>
+                                        </tr>
+                                                                            </table>
+                                </div>
+                            </li>
+                        </ul>
+                                            </div>
+                </div>
+            </div>
+            <div class="footer">
+    <div class="footer-content">
+        <p class="text-center">
+            PHPEMS在线模拟考试系统 著作权登记号：2013 SR 113189
+        </p>
+        <p class="text-center">
+            Copyright © phpems.net  2020        </p>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

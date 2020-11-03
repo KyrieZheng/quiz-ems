@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PHPEMS模拟考试系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.75, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="files/public/css/bootstrap.css" />
+    <link rel="stylesheet/less" type="text/css" href="files/public/css/pe.less" />
+    <link rel="stylesheet" href="files/public/css/swiper.min.css">
+    <script src="files/public/js/less.min.js"></script>
+    <script src="files/public/js/jquery.min.js"></script>
+    <script src="files/public/js/swiper.min.js"></script>
+    <script src="files/public/js/bootstrap.min.js"></script>
+    <script src="files/public/js/bootstrap-datetimepicker.js"></script>
+    <script src="files/public/js/all.fine-uploader.min.js"></script>
+    <script src="files/public/js/ckeditor/ckeditor.js"></script>
+    <script src="files/public/js/ckeditor/js/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!--
+    <script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+    -->
+    <script src="files/public/js/pe.app.js"></script>
+    <script src="files/public/js/exam.app.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="pages">
+            <div class="topbar">
+    <div class="topbar-box">
+        <div class="col-xs-4">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <a href="https://github.com/oiuv/phpems" class="menu">
+                        免费开源的PHP模拟考试系统
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-8">
+            <ul class="list-unstyled list-inline text-right">
+                                <li>
+                    <span class="menu">欢迎您，peadmin</span>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="index.php?user-center" class="menu">
+                        个人中心
+                    </a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="index.php?user-app-logout" class="menu ajax">
+                        退出
+                    </a>
+                </li>
+                                <li>|</li>
+                <li>
+                    <a href="https://github.com/oiuv/phpems" class="menu">
+                        联系我们
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="nav">
+        <div class="col-xs-3">
+            <h1 class="logo"><img src="files/public/img/logo.png" style="height:56px;"/></h1>
+        </div>
+        <div class="col-xs-7">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <h3 class="logo">UOJ</h3>
+                </li>
+                <li class="badge">
+                    到期时间 2021-11-03                </li>
+            </ul>
+        </div>
+        <div class="col-xs-2">
+            <ul class="list-unstyled list-inline">
+                <li class="pull-right">
+                    <a href="index.php?exam" class="menu">
+                        <span class="glyphicon glyphicon-chevron-left"></span> 返回
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            <div class="content">
+                <div class="col-xs-3" style="width: 20%">
+                    <div class="content-box padding">
+                        <h2 class="title">功能导航</h2>
+<ul class="list-unstyled list-txt">
+    <li  class="border">
+        <a href="index.php?exam-app-lesson">
+            <span class="glyphicon glyphicon-pencil"></span> 章节练习
+        </a>
+    </li>
+    <li  class="border active">
+        <a href="index.php?exam-app-exercise">
+            <span class="glyphicon glyphicon-refresh"></span> 强化训练
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-exampaper">
+            <span class="glyphicon glyphicon-time"></span> 模拟考试
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-history">
+            <span class="glyphicon glyphicon-list-alt"></span> 考试记录
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-favor">
+            <span class="glyphicon glyphicon-star"></span> 习题收藏
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-score">
+            <span class="glyphicon glyphicon-stats"></span> 成绩单
+        </a>
+    </li>
+        <li  class="border">
+        <a href="index.php?exam-app-questions">
+            <span class="glyphicon glyphicon-equalizer"></span> 试题库
+        </a>
+    </li>
+    </ul>                    </div>
+                </div>
+                <div class="col-xs-9 nopadding" style="width: 80%">
+                    <div class="content-box padding">
+                        <h2 class="title">强化训练</h2>
+                        <form action="index.php?exam-app-exercise" method="post" action-before="clearStorage">
+                            <fieldset class="logbox">
+                                <div class="form-group underline">
+                                    <label class="block">
+                                        <div class="col-xs-4 tip">
+                                            章节选择
+                                        </div>
+                                        <div class="col-xs-8 form-inline">
+                                            <select autocomplete="off" id="thesectionid" name="args[sectionid]" class="combox form-control" target="theknowsid" refUrl="index.php?exam-app-index-ajax-getknowsbysectionid&sectionid={value}" more="questionnumbers">
+                                                <option value="0">请选择章节</option>
+                                                                                                <option value="11">UOJ-TEST</option>
+                                                                                            </select>
+                                            <select autocomplete="off" name="args[knowsid]" id="theknowsid" class="combox form-control" target="questionnumbers" refUrl="index.php?exam-app-exercise-ajax-getQuestionNumber&knowsid={value}">
+                                                <option value="0">请选择知识点</option>
+                                            </select>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="form-group underline">
+                                    <label class="block">
+                                        <div class="col-xs-4 tip">
+                                            试卷名称
+                                        </div>
+                                        <div class="col-xs-8 form-inline">
+                                            <input placeholder="填写试卷名称" type="text" name="args[title]" class="form-control" needle="needle" msg="请输入试卷名称"/>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="form-group underline">
+                                    <label class="block">
+                                        <div class="col-xs-4 tip">
+                                            做题时间
+                                        </div>
+                                        <div class="col-xs-8 form-inline">
+                                            <input type="text" name="args[time]" class="form-control text-center" datatype="number" min="1" needle="needle" msg="请输入做题时间" size="2" value='60'/> 分钟
+                                        </div>
+                                    </label>
+                                </div>
+                                <div id="questionnumbers"></div>
+                                <div class="form-group  text-center">
+                                    <button type="submit" class="btn btn-primary">开始测试</button>
+                                    <input type="hidden" name="setExecriseConfig" value="1" />
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+    <div class="footer-content">
+        <p class="text-center">
+            PHPEMS在线模拟考试系统 著作权登记号：2013 SR 113189
+        </p>
+        <p class="text-center">
+            Copyright © phpems.net  2020        </p>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

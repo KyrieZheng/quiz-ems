@@ -1,0 +1,113 @@
+        <h2 class="title">
+            第 1 题
+            <a class="badge pull-right favor" data-questionid="565">收藏</a>
+            <a class="badge pull-right error" data-questionid="565">纠错</a>
+                        <a class="jump next badge pull-right" data-number="2">下一题</a>
+                                </h2>
+        <ul class="list-unstyled list-img">
+                        <li class="border morepadding">
+                <div class="desc">
+                    <p><p>中共十七大召开时间是</p></p>
+                </div>
+            </li>
+                        <li class="border morepadding">
+                <div class="desc">
+                    <p><p>A. 2007 年 3月1日</p>
+
+<p>B. 2007 年10月15日</p>
+
+<p>C. 2007 年 10月25日</p>
+
+<p>D. 2007 年 11月l5日</p></p>
+                </div>
+            </li>
+                                    <li class="border morepadding">
+                <form class="nopadding desc">
+                                                                                <label class="inline"><input type="radio" name="question[565]" rel="565" value="A" /><span class="selector">A</span> </label>
+                                                            <label class="inline"><input type="radio" name="question[565]" rel="565" value="B" /><span class="selector">B</span> </label>
+                                                            <label class="inline"><input type="radio" name="question[565]" rel="565" value="C" /><span class="selector">C</span> </label>
+                                                            <label class="inline"><input type="radio" name="question[565]" rel="565" value="D" /><span class="selector">D</span> </label>
+                                                                                                </form>
+            </li>
+                        <li class="border morepadding rightanswer hide">
+                <div class="intro">
+                    <div class="desc">
+                        <div class="col-xs-1 nopadding">
+                            <div class="toolbar"><span class="badge">正确答案</span></div>
+                        </div>
+                                                <div class="col-xs-11">
+                            <b id="rightanswer_565">B</b>
+                        </div>
+                                            </div>
+                </div>
+            </li>
+            <li class="border morepadding rightanswer hide">
+                <div class="intro">
+                    <div class="desc">
+                        <div class="col-xs-1 nopadding">
+                            <div class="toolbar"><span class="badge">试题解析</span></div>
+                        </div>
+                        <div class="col-xs-11">
+                            <p>2007 年 10月15日至21日，中共十七大在北京举行。大会的主题是：高举中国特 色社会主义伟大旗帜，以邓小平理论和&ldquo;三个代表&rdquo;重要思想为指导。深入贯彻落实科学发展观，继续解放思想，坚持改革开放，推动科学；发展，促进，社会和谐，为夺取全面建设小康社」会新胜利而奋斗。答案为B</p>                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="border padding">
+                <div class="intro text-right">
+                    <div class="desc">
+                        <form class="toolbar" target="questionpanel" action="index.php?exam-app-lesson-ajax-questions&knowsid=34">
+                            共 3 题，当前第 1 题。
+                            <span class="form-inline form-group">
+                                去第 <input type="search" size="1" class="form-control text-center" name="number" placeholder="1"> 题
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <script type="text/javascript">
+        $(function(){
+            var sumquestion = function(value,qid){
+                $('.rightanswer').removeClass('hide');
+                console.log(value);
+                console.log($("#rightanswer_"+qid).html());
+                if(value == $("#rightanswer_"+qid).html())
+                {
+                    $.zoombox.show('ajaxOK',{message:'回答正确'});
+                    $("#rightanswer_"+qid).attr('class','text-success');
+                }
+                else
+                {
+                    $.zoombox.show('ajax',{message:'回答错误'});
+                    $("#rightanswer_"+qid).attr('class','text-danger');
+                }
+                setTimeout($.zoombox.hide,1000);
+            }
+            $("input:radio").click(function(){
+                var _this = $(this);
+                var qid = _this.attr('rel');
+                sumquestion(_this.val(),qid);
+            });
+            $(".finish").click(function(){
+                var _this = $(this);
+                var qid = _this.attr('rel');
+                var parent = _this.parents("form:first");
+                var value = '';
+                if(_this.hasClass('fill')){
+                    value = parent.find("input").val();
+                }
+                else{
+                    parent.find("input:checked").each(function(){
+                        value += $(this).val().toUpperCase();
+                    });
+                }
+                if(value == '')
+                {
+                    $.zoombox.show('ajax',{message:'请先答题'});
+                    return;
+                }
+                sumquestion(value,qid);
+            });
+        });
+
+        </script>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PHPEMS模拟考试系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.75, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="files/public/css/bootstrap.css" />
+    <link rel="stylesheet/less" type="text/css" href="files/public/css/pe.less" />
+    <link rel="stylesheet" href="files/public/css/swiper.min.css">
+    <script src="files/public/js/less.min.js"></script>
+    <script src="files/public/js/jquery.min.js"></script>
+    <script src="files/public/js/swiper.min.js"></script>
+    <script src="files/public/js/bootstrap.min.js"></script>
+    <script src="files/public/js/bootstrap-datetimepicker.js"></script>
+    <script src="files/public/js/all.fine-uploader.min.js"></script>
+    <script src="files/public/js/ckeditor/ckeditor.js"></script>
+    <script src="files/public/js/ckeditor/js/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!--
+    <script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+    -->
+    <script src="files/public/js/pe.app.js"></script>
+    <script src="files/public/js/exam.app.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="pages">
+            <div class="topbar">
+    <div class="topbar-box">
+        <div class="col-xs-4">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <a href="https://github.com/oiuv/phpems" class="menu">
+                        免费开源的PHP模拟考试系统
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-8">
+            <ul class="list-unstyled list-inline text-right">
+                                <li>
+                    <span class="menu">欢迎您，peadmin</span>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="index.php?user-center" class="menu">
+                        个人中心
+                    </a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="index.php?user-app-logout" class="menu ajax">
+                        退出
+                    </a>
+                </li>
+                                <li>|</li>
+                <li>
+                    <a href="https://github.com/oiuv/phpems" class="menu">
+                        联系我们
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <div class="nav">
+        <div class="col-xs-3">
+            <h1 class="logo"><img src="files/public/img/logo.png" style="height:56px;"/></h1>
+        </div>
+        <div class="col-xs-7">
+            <ul class="list-unstyled list-inline">
+                <li>
+                    <h3 class="logo">UOJ</h3>
+                </li>
+                <li class="badge">
+                    到期时间 2021-11-03                </li>
+            </ul>
+        </div>
+        <div class="col-xs-2">
+            <ul class="list-unstyled list-inline">
+                <li class="pull-right">
+                    <a href="index.php?exam" class="menu">
+                        <span class="glyphicon glyphicon-chevron-left"></span> 返回
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+            <div class="content">
+                <div class="col-xs-3" style="width: 20%">
+                    <div class="content-box padding">
+                        <h2 class="title">功能导航</h2>
+<ul class="list-unstyled list-txt">
+    <li  class="border">
+        <a href="index.php?exam-app-lesson">
+            <span class="glyphicon glyphicon-pencil"></span> 章节练习
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-exercise">
+            <span class="glyphicon glyphicon-refresh"></span> 强化训练
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-exampaper">
+            <span class="glyphicon glyphicon-time"></span> 模拟考试
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-history">
+            <span class="glyphicon glyphicon-list-alt"></span> 考试记录
+        </a>
+    </li>
+    <li  class="border active">
+        <a href="index.php?exam-app-favor">
+            <span class="glyphicon glyphicon-star"></span> 习题收藏
+        </a>
+    </li>
+    <li  class="border">
+        <a href="index.php?exam-app-score">
+            <span class="glyphicon glyphicon-stats"></span> 成绩单
+        </a>
+    </li>
+        <li  class="border">
+        <a href="index.php?exam-app-questions">
+            <span class="glyphicon glyphicon-equalizer"></span> 试题库
+        </a>
+    </li>
+    </ul>                    </div>
+                </div>
+                <div class="col-xs-9 nopadding">
+                                        <div class="content-box noground padding">
+                                            </div>
+                </div>
+            </div>
+            <div class="footer">
+    <div class="footer-content">
+        <p class="text-center">
+            PHPEMS在线模拟考试系统 著作权登记号：2013 SR 113189
+        </p>
+        <p class="text-center">
+            Copyright © phpems.net  2020        </p>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+<div id="modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" class="close" type="button" data-dismiss="modal">×</button>
+                <h4 id="myModalLabel">
+                    试题详情
+                </h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button aria-hidden="true" class="btn btn-primary" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="submodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">交卷</h4>
+            </div>
+            <div class="modal-body">
+                <p>共有试题 <span class="allquestionnumber">50</span> 题，已做 <span class="yesdonumber">0</span> 题。您确认要交卷吗？</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="javascript:submitPaper();" class="btn btn-primary">确定交卷</button>
+                <button aria-hidden="true" class="btn" type="button" data-dismiss="modal">再检查一下</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="errormodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">错题举报</h4>
+            </div>
+            <div class="modal-body">
+                <form action="index.php?exam-app-lesson-reporterror" method="post" class="form-horizontal" id="reporterrorform">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-xs-3">错误类型：</label>
+                            <div class="col-xs-9">
+                                <select class="form-control" name="args[fbtype]" needle="needle" msg="请选择错误类型">
+                                    <option value="答案错误">答案错误</option>
+                                    <option value="题干错误">题干错误</option>
+                                    <option value="知识点归类错误">知识点归类错误</option>
+                                    <option value="图片错误">图片错误</option>
+                                    <option value="解析错误">解析错误</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <textarea class="form-control" name="args[fbcontent]" rows="4" needle="needle" msg="请填写错误描述" placeholder="请填写错误描述"></textarea>
+                                <input type="hidden" name="reporterror" value="1">
+                                <input type="hidden" name="args[fbquestionid]" value="" id="fbquestionid">
+                                <input type="hidden" name="page" value="">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="javascript:$('#reporterrorform').submit();">提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        try{
+            initData = $.parseJSON(storage.getItem('questions'));
+            if(!initData)initData = new Object();
+            for(k in initData){
+                var v = initData[k];
+                $('#time_'+k).val(v['time']);
+                $(":radio[rel="+k+"]").each(function(){
+                    var that = $(this);
+                    if(v['value'] == that.val()){
+                        that.attr("checked",true);
+                    }
+                });
+                $("#paper :text[rel="+k+"],#paper textarea[rel="+k+"]").each(function(){
+                    var that = $(this);
+                    that.val(v['value']);
+                    if(that.hasClass('jckeditor')){
+                        CKEDITOR.instances[that.attr('id')].setData(v['value']);
+                    }
+                });
+                $("#paper :checkbox[rel="+k+"]").each(function(){
+                    var that = $(this);
+                    if(v['value'].indexOf(that.val()) >= 0){
+                        that.attr("checked",true);
+                    }
+                });
+            }
+        }catch(e){
+            //
+        }finally {
+            markQuestions();
+        }
+        $('#paper :radio').on('click',function(){
+            var that = $(this);
+            setTimeout(function(){
+                var now = Date.parse(new Date())/1000;
+                $('#time_'+that.attr('rel')).val(now);
+                initData[that.attr('rel')] = {value:that.val(),time:now};
+                markQuestions();
+            },100);
+        });
+
+        $('#paper :checkbox').on('click',function(){
+            var that = $(this);
+            setTimeout(function(){
+                var now = Date.parse(new Date())/1000;
+                var answer = '';
+                $('#time_'+that.attr('rel')).val(now);
+                that.parents('li').find(':checked').each(function(){
+                    answer += $(this).val().toUpperCase();
+                });
+                initData[that.attr('rel')] = {value:answer,time:now};
+                markQuestions();
+            },100);
+        });
+
+        $('#paper :text,#paper textarea').on('blur',function(){
+            var that = $(this);
+            setTimeout(function(){
+                var now = Date.parse(new Date())/1000;
+                $('#time_'+that.attr('rel')).val(now);
+                initData[that.attr('rel')] = {value:that.val(),time:now};
+                markQuestions();
+            },100);
+        });
+
+        $('body').delegate('.favor.badge','click',function() {
+            favorquestion($(this).attr('data-questionid'));
+        });
+
+        $('body').delegate('.error.badge','click',function() {
+            $('#fbquestionid').val($(this).attr('data-questionid'));
+            $('#errormodal').modal();
+        });
+
+        $('body').delegate('#questionindex .resize','click',function(){
+            var that = $(this);
+            if(that.children('.glyphicon').hasClass('glyphicon-resize-full'))
+            {
+                $('#questionindex .resize .glyphicon').removeClass('glyphicon-resize-full').addClass('glyphicon glyphicon-resize-small');
+                $('#questionindex').css('width','1226px');
+            }
+            else
+            {
+                $('#questionindex .resize .glyphicon').removeClass('glyphicon-resize-small').addClass('glyphicon glyphicon-resize-full');
+                $('#questionindex').css('width','280px');
+            }
+        });
+
+        $('body').delegate('#questionindex .qindex','click',function(){
+            $('#questionindex .resize .glyphicon').removeClass('glyphicon-resize-small').addClass('glyphicon glyphicon-resize-full');
+            $('#questionindex').css('width','280px');
+        });
+
+        $('.allquestionnumber').html($('#questionindex .qindex').length);
+        $('.yesdonumber').html($('#questionindex .qindex.btn-primary').length);
+    });
+</script></body>
+</html>
